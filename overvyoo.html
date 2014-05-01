@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>Arik Goldstein Overvyoo APIs</title>
+	  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	</head>
+	
+	<body>
+		<h1>Create a customer</h1>
+	
+		<h2>Supported Formats</h2>
+		application/json
+		
+		<h2>Errors</h2>
+		<b>400</b>
+		{:desc=&gt;&quot;Bad Request&quot;}
+		<br>
+		<b>500</b>
+		{:desc=&gt;&quot;Server Internal Error&quot;}
+		<br>
+		
+		<h2>Examples</h2>
+		
+		<p>
+			
+			<h4>post /overvyoo/customers/create</h4>
+			<br>
+
+			{ <br>
+				name: &quot;Arik Goldstein&quot;, <br>
+				address: &quot;Yad Shalom 39, Ramat Gan&quot;, <br>
+				lat: 32.123456, <br>
+				lng: 34.123456, <br>
+				phone: &quot;052-12345&quot;, <br>
+				image: &quot;http://www.pics.com/pic.png&quot; <br>
+			}
+			
+			<br>
+			
+			<h4>response:</h4>
+			<p>
+			 { <br>
+				success: true, <br>
+				customer: { customer_data } <br>
+			 }
+			 </p>
+		</p>
+	</body>
+</html>
