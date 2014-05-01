@@ -1,12 +1,24 @@
-var express = require('express'),
-    overvyoo = require('./overvyoo');
+/**
+The server framework. 
+Listens for requests
+Using express
+*/
+
+//The web server framework
+var express = require('express');
+
+//The overvyoo partner APIs
+var overvyoo = require('./overvyoo');
  
 var app = express();
+var port=3000;
+
 /*Workaround the req.body=undefined*/
 app.use(express.bodyParser());
- 
+
+//Publish the API
 app.post('/overvyoo/customers/create', overvyoo.createCustomer);
-app.post('/overvyoo', overvyoo.welcome);
- 
-app.listen(3000);
-console.log('Listening on port 3000...');
+
+//Listen to requests
+app.listen(port);
+console.log('Listening on port '+port+'...');
